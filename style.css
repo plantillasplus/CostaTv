@@ -1,0 +1,50 @@
+body{background:var(--fondo-color);color:var(--text-color);font-family:Arial,sans-serif;margin:0;padding:0}
+.header{display:flex;justify-content:space-between;padding:10px;background:var(--seccion-color);position:fixed;top:0;width:-webkit-fill-available}
+input{flex:1;padding:8px;border:none;background:#fcfcfc0f;border-radius:7px;color:white;border:solid 1px var(--borde-color)}
+button#favBtn{background:#fcfcfc0f;color:var(--text-color);border:none;padding:8px 6px;margin-left:5px;border-radius:5px;cursor:pointer;border:solid 1px var(--borde-color)}
+.player-container{text-align:center;background:#1c2333;padding:8px;position:sticky;top:50px}
+#player iframe{height:100%;width:100%;border:none}
+#player{background:black;height:200px;display:flex;align-items:center;justify-content:center;font-size:20px;border-radius:8px;overflow:hidden;flex-direction:column;gap:20px}
+#video,[data-player]{width:100%!important;height:100%!important}
+.categories,.items{display:flex;flex-wrap:wrap;justify-content:center;margin-top:10px}
+#categories{overflow:auto;white-space:nowrap;display:block;text-align:center}
+.category{padding:5px 10px;margin:5px;background:var(--seccion-color);cursor:pointer;border-radius:5px;display:inline-block}
+div#items{margin-bottom:34px}
+.category.active{background:var(--active-color);color:var(--active-text)}
+.item{padding:10px;margin:5px;background:var(--seccion-color);display:flex;align-items:center;border-radius:8px;cursor:pointer;border:solid 2px transparent;width:125px;justify-content:center}
+.item.active{border:solid 2px var(--borde-color);color:var(--active-text)}
+.item:hover{border:solid 2px var(--borde-color);color:var(--active-text)}
+.favorite{margin-left:10px;cursor:pointer}
+.hidden{display:none}
+.hiddenn::before{}
+.hiddenn{font-size:0}
+.hiddenn:after{content:"No hay mas canales";display:block;font-size:14px;margin:0;cursor:default}
+.sliderbar{padding-top:45px}
+#loadMore{background:var(--seccion-color);padding:10px;text-align:center;cursor:pointer;margin:15px auto;width:85%;max-width:400px;border-radius:5px}
+p#noResults{text-align:center;background:var(--seccion-color);width:80%;max-width:500px;margin:44px auto;padding:20px;border-radius:4px}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;z-index:999}
+#overlay.active{display:block}
+#favPopup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--seccion-color);padding:20px;border-radius:10px;z-index:1000;width:80%;max-width:500px;text-align:center}
+#favPopup.show{display:block}
+@keyframes zoomInOut{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+button#playFirst{color:#fff;background:transparent;border:solid 1px #ccc;border-radius:50px;padding:3px 22px 7px;width:60px;height:60px;font-size:20px;cursor:pointer;transition:transform 0.5s ease-in-out;animation:zoomInOut 3s infinite}
+/* Cuando el usuario pase el cursor,detener la animación y aplicar un zoom suave */
+button#playFirst:hover{animation:none;transform:scale(1.3)}
+div#favList{margin:30px 0;gap:5px;display:flex;flex-wrap:wrap;justify-content:center}
+div#favList button{padding:7px;margin:5px;background:var(--seccion-color);display:flex;align-items:center;border-radius:8px;cursor:pointer;border:solid 2px var(--borde-color);color:var(--text-color);width:135px}
+div#favList button:hover{border:solid 2px var(--active-text);color:var(--active-text)}
+div#favList button span,.item span{text-overflow:ellipsis;width:100%;white-space:nowrap;overflow:hidden}
+.item i{font-style:normal}
+div#favList button i{font-style:normal;border:solid 1px #ccc;border-radius:20px;padding:2px 4.5px 2px 6.5px}
+button.popcerr{margin-top:11px;font-size:15px;padding:5px 13px;border-radius:5px;background:transparent;color:var(--text-color);border:solid 1px var(--borde-color);cursor:pointer}
+
+@media screen and (min-width: 750px) {
+.contents{display:flex;flex-direction:row-reverse;gap:20px;padding:20px;height:95vh}
+.player-container{position:relative;top:0;flex:1;border-radius:5px;background:#2b2e4633}
+.sliderbar{padding:6px;width:320px;background:#2b2e4633;border-radius:5px;display:flex;flex-direction:column}
+.mostrar{flex:1;overflow:auto}
+.header{position:relative}
+#categories{white-space:normal;overflow:revert}
+.item{width:100%}
+div#player{height:100%}
+}
